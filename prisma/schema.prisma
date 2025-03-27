@@ -39,3 +39,74 @@ model Review {
   book Book @relation(fields: [bookId], references: [id], onDelete: Cascade)
 }
 
+model pr_goods_search_intf {
+  SEARCH_INTF_SEQ           BigInt    @id @default(autoincrement()) @map("SEARCH_INTF_SEQ")
+  ID                       String?   @db.VarChar
+  GOODS_NO                 String?   @db.VarChar
+  GOODS_NM                 String?   @db.VarChar
+  PREST_NM                 String?   @db.VarChar
+  ADVE_WRD                 String?   @db.VarChar
+  SCH_KWD_NM               String?   @db.VarChar
+  BRAND_NO                 String?   @db.VarChar
+  BRAND_NM                 String?   @db.VarChar
+  ICE_PB_YN                String?   @db.VarChar
+  BUYR_AGE_LMT_CD          Int?
+  GOODS_REG_DTM            String?   @db.VarChar
+  SALE_STAT_CD             String?   @db.VarChar
+  DELI_PROC_TYP_CD         String?   @db.VarChar
+  DELI_WAY_CD              String?   @db.VarChar
+  DELI_DDAY                String?   @db.VarChar
+  RCNT_SALE_PRC            String?   @db.VarChar
+  SALE_PRC                 Int?
+  APLY_PRC                 Int?
+  DC_RATE                  Int?
+  DISP_CTG_NO              Json?
+  OPTION_LIST              Json?
+  TTOP_ICON                String?   @db.VarChar
+  TBTM_ICON                String?   @db.VarChar
+  TOP_DISP_ICON_LIST       Json?
+  BTM_DISP_ICON_LIST       Json?
+  DLEX_TYP_CD              String?   @db.VarChar
+  PAY_WAY_MEAN_CD          String?   @db.VarChar
+  RSERV_SALE_YN            String?   @db.VarChar
+  ORD_QTY                  Int?
+  GOODS_REV_CNT            Int?
+  GOODS_REV_HLPFUL_CNT     Int?
+  GOODS_REV_STARSCR_AVG_VAL Int?
+  WISH_LIST_CNT            String?   @db.VarChar
+  GOODS_DTL_DESC           String?   @db.Text
+  SEND_GB                  String?   @db.VarChar
+  LANG_CD                  String?   @db.VarChar
+  EXTRA_DATA               String?   @db.Text
+  ICON_JSON                String?   @db.Text
+  GOODS_REP_IMG_PATH_NM    String?   @db.Text
+  CUSTOM_DATA1             String?   @db.VarChar
+  CUSTOM_DATA2             String?   @db.VarChar
+  CUSTOM_DATA3             String?   @db.VarChar
+  CUSTOM_DATA4             Int?
+  CUSTOM_DATA5             Int?
+  CUSTOM_DATA6             Int?
+  CUSTOM_DATA7             Int?
+  CUSTOM_DATA8             Int?
+  CUSTOM_DATA9             DateTime? @db.Date
+  CUSTOM_DATA10            DateTime? @db.Date
+  SITE_NO                  String?   @db.VarChar
+  DPML_NO                  String?   @db.VarChar
+  ENTR_NO                  String?   @db.VarChar
+  MSHOP_NM                 String?   @db.VarChar
+  SUBJECT_CD               String?   @db.VarChar
+  GRADE_CD                 String?   @db.VarChar
+  SAM_MARKET_YN            String?   @db.VarChar
+  GOODS_PUR_LMT_YN         String?   @db.VarChar
+  SALE_PRC_EXP_LMT_YN      String?   @db.VarChar
+  SO_YN                    String?   @default("N") @db.VarChar
+  SYS_MOD_DTM              String?   @db.VarChar
+  INDEX_YN                 String?   @db.VarChar
+
+    @@index([ID], name: "idx_id")
+  @@index([GOODS_NO], name: "idx_goods_no")
+  @@index([SYS_MOD_DTM], name: "idx_sys_mod_dtm")
+  @@index([INDEX_YN], name: "idx_index_yn")
+}
+
+
